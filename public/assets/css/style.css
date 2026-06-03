@@ -67,7 +67,7 @@ body:not(.auth-page)::before {
     pointer-events: none;
     background: url("../img/logo.png") no-repeat center 44%;
     background-size: min(720px, 84vw);
-    opacity: .14;
+    opacity: .30;
     -webkit-mask-image: radial-gradient(ellipse 64% 60% at center 44%, #000 38%, transparent 76%);
     mask-image: radial-gradient(ellipse 64% 60% at center 44%, #000 38%, transparent 76%);
 }
