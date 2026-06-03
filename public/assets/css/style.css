@@ -58,6 +58,22 @@ body {
     background-attachment: fixed;
 }
 
+/* Logo como marca d'água de fundo (degradê radial) — só nas páginas internas */
+body:not(.auth-page)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: url("../img/logo.png") no-repeat center 42%;
+    background-size: min(640px, 78vw);
+    opacity: .07;
+    -webkit-mask-image: radial-gradient(ellipse 62% 58% at center 42%, #000 28%, transparent 72%);
+    mask-image: radial-gradient(ellipse 62% 58% at center 42%, #000 28%, transparent 72%);
+}
+/* Conteúdo acima da marca d'água */
+.navbar, main, footer { position: relative; z-index: 1; }
+
 /* Anula utilitário claro do Bootstrap no body (tema é escuro) */
 body.bg-light { background-color: transparent !important; }
 
