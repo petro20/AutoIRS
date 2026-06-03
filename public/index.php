@@ -44,9 +44,12 @@ spl_autoload_register(function (string $class): void {
     if (strncmp($class, $prefix, strlen($prefix)) !== 0) {
         return;
     }
-    $relative = substr($class, strlen($prefix));
-    $file = APP_PATH . '/' . str_replace('\\', '/', $relative) . '.php';
-    if (file_exists($file)) {
+       $relative = substr($class, strlen($prefix)); // ex.: "Core\App"
+    $parts = explode('\\', $relative);
+    $className = array_pop($parts);              // "App" (mantém a capitalização)
+    $dir = strtolower(implode('/', $parts));     // "core" (pasta em minúsculas)
+    $file = APP_PATH . '/' . ($dir !== '' ? $dir . '/' : '') . $className . '.php';
+    if (is_file($file)) {
         require $file;
     }
 });
