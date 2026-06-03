@@ -46,6 +46,7 @@ use App\Core\Csrf;
                     <p class="text-center mb-0">
                         Não tem conta? <a href="<?= url('auth/register') ?>">Registar</a>
                     </p>
+                    <p class="text-center text-muted small mt-3 mb-0">AutoIRS v1.0</p>
                 </div>
             </div>
         </div>
