@@ -44,7 +44,12 @@ use App\Core\Csrf;
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" name="password" class="form-control" required>
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control" required>
+                                <button class="btn btn-outline-secondary toggle-senha" type="button" tabindex="-1" aria-label="Mostrar senha">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
                         </div>
                         <button class="btn btn-primary w-100"><i class="bi bi-box-arrow-in-right"></i> Entrar</button>
                     </form>
@@ -59,5 +64,17 @@ use App\Core\Csrf;
         </div>
     </div>
 </div>
+<script>
+    // Mostrar/ocultar senha (olhinho)
+    document.querySelectorAll('.toggle-senha').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var inp = this.parentElement.querySelector('input');
+            var icon = this.querySelector('i');
+            var mostrar = inp.type === 'password';
+            inp.type = mostrar ? 'text' : 'password';
+            icon.className = mostrar ? 'bi bi-eye-slash' : 'bi bi-eye';
+        });
+    });
+</script>
 </body>
 </html>
