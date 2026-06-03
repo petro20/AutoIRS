@@ -71,8 +71,9 @@ body:not(.auth-page)::before {
     -webkit-mask-image: radial-gradient(ellipse 64% 60% at center 44%, #000 38%, transparent 76%);
     mask-image: radial-gradient(ellipse 64% 60% at center 44%, #000 38%, transparent 76%);
 }
-/* Conteúdo acima da marca d'água */
-.navbar, main, footer { position: relative; z-index: 1; }
+/* Conteúdo acima da marca d'água (navbar com z-index alto p/ o dropdown ficar à frente) */
+.navbar { position: relative; z-index: 1031; }
+main, footer { position: relative; z-index: 1; }
 
 /* Anula utilitário claro do Bootstrap no body (tema é escuro) */
 body.bg-light { background-color: transparent !important; }

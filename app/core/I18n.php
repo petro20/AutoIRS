@@ -11,18 +11,22 @@ class I18n
 {
     /** Idiomas suportados (código => nome nativo). */
     public const SUPPORTED = [
-        'pt' => 'Português',
-        'en' => 'English',
-        'fr' => 'Français',
-        'es' => 'Español',
+        'pt'   => 'Português',
+        'ptbr' => 'Português (Brasil)',
+        'mwl'  => 'Mirandês',
+        'en'   => 'English',
+        'fr'   => 'Français',
+        'es'   => 'Español',
     ];
 
     /** Bandeira (emoji) por idioma, para o seletor. */
     public const FLAGS = [
-        'pt' => '🇵🇹',
-        'en' => '🇬🇧',
-        'fr' => '🇫🇷',
-        'es' => '🇪🇸',
+        'pt'   => '🇵🇹',
+        'ptbr' => '🇧🇷',
+        'mwl'  => '🗣️',
+        'en'   => '🇬🇧',
+        'fr'   => '🇫🇷',
+        'es'   => '🇪🇸',
     ];
 
     private const DEFAULT = 'pt';
