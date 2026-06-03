@@ -54,8 +54,9 @@ spl_autoload_register(function (string $class): void {
     }
 });
 
-// --- Arranque da aplicação ----------------------------------------------
-use App\Core\App;
+// --- Idioma (i18n) -------------------------------------------------------
+App\Core\I18n::init();
 
-$app = new App();
+// --- Arranque da aplicação ----------------------------------------------
+$app = new App\Core\App();
 $app->run();

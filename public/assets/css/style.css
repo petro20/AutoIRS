@@ -127,6 +127,19 @@ a { text-decoration: none; }
 .navbar-luxe .nav-link i { color: var(--gold); }
 .navbar-toggler { border-color: var(--line); }
 
+/* Dropdown (seletor de idioma) */
+.dropdown-menu {
+    background: var(--navy-card);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: .4rem;
+    min-width: 11rem;
+}
+.dropdown-item { color: var(--ivory); border-radius: 8px; padding: .5rem .8rem; }
+.dropdown-item:hover, .dropdown-item:focus { background: var(--gold-soft); color: var(--gold-2); }
+.dropdown-item.active { background: rgba(210, 163, 60, .2); color: var(--gold-2); }
+
 /* ---------- Cartões ---------- */
 .card {
     background: linear-gradient(180deg, var(--navy-card), var(--navy-700));

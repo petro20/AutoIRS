@@ -1,6 +1,7 @@
 <?php
 
 use App\Core\Auth;
+use App\Core\I18n;
 
 /** @var string $titulo */
 ?>
@@ -33,18 +34,33 @@ use App\Core\Auth;
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= url('dashboard') ?>"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                    <a class="nav-link" href="<?= url('dashboard') ?>"><i class="bi bi-speedometer2"></i> <?= e(t('nav.dashboard')) ?></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= url('cliente/create') ?>"><i class="bi bi-person-plus"></i> Novo cliente</a>
+                    <a class="nav-link" href="<?= url('cliente/create') ?>"><i class="bi bi-person-plus"></i> <?= e(t('nav.new_client')) ?></a>
                 </li>
                 <li class="nav-item">
                     <span class="nav-link text-white-50"><i class="bi bi-person-circle"></i> <?= e(Auth::nome()) ?></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= url('auth/logout') ?>"><i class="bi bi-box-arrow-right"></i> Sair</a>
+                    <a class="nav-link" href="<?= url('auth/logout') ?>"><i class="bi bi-box-arrow-right"></i> <?= e(t('nav.logout')) ?></a>
+                </li>
+                <!-- Seletor de idioma -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="<?= e(t('lang.label')) ?>">
+                        <i class="bi bi-translate"></i> <?= I18n::FLAGS[I18n::lang()] ?? '' ?>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <?php foreach (I18n::SUPPORTED as $code => $name): ?>
+                            <li>
+                                <a class="dropdown-item<?= I18n::lang() === $code ? ' active' : '' ?>" href="<?= url('lang/set/' . $code) ?>">
+                                    <?= I18n::FLAGS[$code] ?> <?= e($name) ?>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
                 </li>
             </ul>
         </div>

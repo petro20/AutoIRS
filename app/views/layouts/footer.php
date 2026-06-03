@@ -4,9 +4,9 @@
     <div class="container text-center text-muted small">
         <i class="bi bi-gem" style="color:var(--gold)"></i>
         &copy; <?= date('Y') ?> <strong style="color:var(--gold-2);font-family:'Playfair Display',serif"><?= APP_NAME ?></strong>
-        — Sistema de gestão de IRS e Abertura de Atividade.
+        — <?= e(t('footer.tagline')) ?>
         <br>
-        <span class="text-danger">Cálculo simplificado de apoio. Não substitui a liquidação oficial da AT.</span>
+        <span class="text-danger"><?= e(t('footer.disclaimer')) ?></span>
     </div>
 </footer>
 

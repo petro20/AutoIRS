@@ -8,9 +8,9 @@ use App\Core\Csrf;
  */
 ?>
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h3 mb-0"><i class="bi bi-speedometer2"></i> Dashboard</h1>
+    <h1 class="h3 mb-0"><i class="bi bi-speedometer2"></i> <?= e(t('dash.title')) ?></h1>
     <a href="<?= url('cliente/create') ?>" class="btn btn-primary">
-        <i class="bi bi-person-plus"></i> Novo cliente
+        <i class="bi bi-person-plus"></i> <?= e(t('dash.new_client')) ?>
     </a>
 </div>
 
@@ -18,7 +18,7 @@ use App\Core\Csrf;
 <?php if (!empty($alertas)): ?>
     <div class="card border-warning mb-4">
         <div class="card-header bg-warning-subtle">
-            <i class="bi bi-bell"></i> Alertas (<?= count($alertas) ?>)
+            <i class="bi bi-bell"></i> <?= e(t('dash.alerts')) ?> (<?= count($alertas) ?>)
         </div>
         <ul class="list-group list-group-flush">
             <?php foreach ($alertas as $a): ?>
@@ -34,23 +34,23 @@ use App\Core\Csrf;
 <!-- Lista de clientes -->
 <div class="card shadow-sm">
     <div class="card-header bg-white">
-        <i class="bi bi-people"></i> Os meus clientes (<?= count($clientes) ?>)
+        <i class="bi bi-people"></i> <?= e(t('dash.my_clients')) ?> (<?= count($clientes) ?>)
     </div>
     <div class="card-body p-0">
         <?php if (empty($clientes)): ?>
             <div class="p-4 text-center text-muted">
-                Ainda não tem clientes. <a href="<?= url('cliente/create') ?>">Adicione o primeiro</a>.
+                <?= e(t('dash.no_clients')) ?> <a href="<?= url('cliente/create') ?>"><?= e(t('dash.add_first')) ?></a>.
             </div>
         <?php else: ?>
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
                     <thead class="table-light">
                         <tr>
-                            <th>Nome</th>
-                            <th>NIF</th>
-                            <th>Email</th>
-                            <th>Contacto</th>
-                            <th class="text-end">Ações</th>
+                            <th><?= e(t('dash.col_name')) ?></th>
+                            <th><?= e(t('dash.col_nif')) ?></th>
+                            <th><?= e(t('dash.col_email')) ?></th>
+                            <th><?= e(t('dash.col_contact')) ?></th>
+                            <th class="text-end"><?= e(t('dash.col_actions')) ?></th>
                         </tr>
                     </thead>
                     <tbody>

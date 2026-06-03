@@ -1,15 +1,16 @@
 <?php
 
 use App\Core\Csrf;
+use App\Core\I18n;
 
 /** Vista de registo (sem layout principal). */
 ?>
 <!DOCTYPE html>
-<html lang="pt" data-bs-theme="dark">
+<html lang="<?= e(I18n::lang()) ?>" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registar — <?= APP_NAME ?></title>
+    <title><?= e(t('auth.register')) ?> — <?= APP_NAME ?></title>
     <link rel="icon" type="image/png" href="<?= url('assets/img/logo.png') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +27,7 @@ use App\Core\Csrf;
                 <div class="card-body p-4 p-lg-5">
                     <div class="text-center mb-4">
                         <img src="<?= url('assets/img/logo.png') ?>" alt="AutoIRS" style="width:200px;max-width:70%;border-radius:16px">
-                        <p class="text-muted mt-2 mb-0" style="letter-spacing:2px;text-transform:uppercase;font-size:.72rem">Criar Conta de Contabilista</p>
+                        <p class="text-muted mt-2 mb-0" style="letter-spacing:2px;text-transform:uppercase;font-size:.72rem"><?= e(t('auth.area_register')) ?></p>
                     </div>
 
                     <?php if (!empty($_SESSION['flash'])): ?>
@@ -39,39 +40,46 @@ use App\Core\Csrf;
                     <form method="post" action="<?= url('auth/register') ?>">
                         <?= Csrf::field() ?>
                         <div class="mb-3">
-                            <label class="form-label">Nome</label>
+                            <label class="form-label"><?= e(t('auth.name')) ?></label>
                             <input type="text" name="nome" class="form-control" value="<?= old('nome') ?>" required autofocus>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Email</label>
+                            <label class="form-label"><?= e(t('auth.email')) ?></label>
                             <input type="email" name="email" class="form-control" value="<?= old('email') ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Password</label>
+                            <label class="form-label"><?= e(t('auth.password')) ?></label>
                             <div class="input-group">
                                 <input type="password" name="password" class="form-control" minlength="8" required>
-                                <button class="btn btn-outline-secondary toggle-senha" type="button" tabindex="-1" aria-label="Mostrar senha">
+                                <button class="btn btn-outline-secondary toggle-senha" type="button" tabindex="-1" aria-label="<?= e(t('auth.show_password')) ?>">
                                     <i class="bi bi-eye"></i>
                                 </button>
                             </div>
-                            <div class="form-text">Mínimo 8 caracteres.</div>
+                            <div class="form-text"><?= e(t('auth.min8')) ?></div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Confirmar password</label>
+                            <label class="form-label"><?= e(t('auth.confirm_password')) ?></label>
                             <div class="input-group">
                                 <input type="password" name="password_confirm" class="form-control" minlength="8" required>
-                                <button class="btn btn-outline-secondary toggle-senha" type="button" tabindex="-1" aria-label="Mostrar senha">
+                                <button class="btn btn-outline-secondary toggle-senha" type="button" tabindex="-1" aria-label="<?= e(t('auth.show_password')) ?>">
                                     <i class="bi bi-eye"></i>
                                 </button>
                             </div>
                         </div>
-                        <button class="btn btn-primary w-100"><i class="bi bi-person-plus"></i> Criar conta</button>
+                        <button class="btn btn-primary w-100"><i class="bi bi-person-plus"></i> <?= e(t('auth.create_account')) ?></button>
                     </form>
 
                     <hr class="auth-divider my-4">
                     <p class="text-center mb-0">
-                        Já tem conta? <a href="<?= url('auth/login') ?>">Entrar</a>
+                        <?= e(t('auth.have_account')) ?> <a href="<?= url('auth/login') ?>"><?= e(t('auth.login')) ?></a>
                     </p>
+
+                    <!-- Seletor de idioma -->
+                    <div class="text-center mt-3">
+                        <?php foreach (I18n::SUPPORTED as $code => $name): ?>
+                            <a href="<?= url('lang/set/' . $code) ?>" class="text-decoration-none small <?= I18n::lang() === $code ? 'fw-bold' : 'text-muted' ?>" style="margin:0 .3rem" title="<?= e($name) ?>"><?= I18n::FLAGS[$code] ?></a>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -33,6 +33,16 @@ if (!function_exists('url')) {
     }
 }
 
+if (!function_exists('t')) {
+    /**
+     * Traduz uma chave para o idioma atual (i18n).
+     */
+    function t(string $key, ?string $default = null): string
+    {
+        return \App\Core\I18n::t($key, $default);
+    }
+}
+
 if (!function_exists('old')) {
     /**
      * Devolve um valor previamente submetido (re-preenchimento de formulários).
