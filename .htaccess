@@ -5,13 +5,16 @@
 # redireciona todo o tráfego para a pasta /public e bloqueia o acesso
 # direto às pastas sensíveis (config, app, sql, uploads).
 
+# Encaminha tudo para /public (loop-safe) e bloqueia pastas sensíveis.
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Bloquear acesso direto a pastas sensíveis.
+    # Bloquear acesso direto a pastas sensíveis
     RewriteRule ^(config|app|sql|vendor)/ - [F,L]
 
-    # Encaminhar tudo para a pasta public.
-    RewriteCond %{REQUEST_URI} !^/public/
+    # Se o pedido já está em public/, parar (evita loop infinito)
+    RewriteRule ^public/ - [L]
+
+    # Encaminhar o restante para a pasta public
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
