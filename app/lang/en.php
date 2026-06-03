@@ -138,6 +138,21 @@ return [
     'estado.concluido'         => 'Completed',
     'estado.rejeitado'         => 'Rejected',
 
+    // Help
+    'nav.help'      => 'Help',
+    'help.title'    => 'How to use AutoIRS',
+    'help.subtitle' => 'Quick guide to the main features',
+    'help.c1_title' => 'Managing clients',
+    'help.c1_body'  => 'On the Dashboard, click "New client" and fill in the Tax ID/NIF (9 digits), name and contacts. In the list, use the icons to edit, calculate IRS, view declarations or manage the business activity registration.',
+    'help.c2_title' => 'Calculating IRS',
+    'help.c2_body'  => 'Open a client and click the calculator icon. Enter the Category A income and expenses (health, education, general, housing). The system applies the tax brackets and deductions and shows the estimated tax. It is a support calculation — it does not replace the official assessment by the Tax Authority (AT).',
+    'help.c3_title' => 'Business activity registration',
+    'help.c3_body'  => 'For a client, open "Business activity registration" and create a process (start date, activity code/CAE, turnover, IBAN, VAT option). Then generate the PDF guide, send for validation and approve or reject. The status is tracked at each step.',
+    'help.c4_title' => 'Language and account',
+    'help.c4_body'  => 'Change the language using the 🌐 selector in the top bar. To end your session, use "Log out".',
+    'tip.irs'       => 'Enter the gross Category A income and the deductible expenses. The result is a support estimate.',
+    'tip.abertura'  => 'Collect the client data to prepare the start of activity. You will then be able to generate the PDF guide to submit on the Tax Portal.',
+
     // Footer
     'footer.tagline'    => 'IRS management and Business Activity registration system.',
     'footer.disclaimer' => 'Simplified support calculation. Does not replace the official assessment by the Tax Authority (AT).',

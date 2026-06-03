@@ -138,6 +138,21 @@ return [
     'estado.concluido'         => 'Completado',
     'estado.rejeitado'         => 'Rechazado',
 
+    // Ayuda
+    'nav.help'      => 'Ayuda',
+    'help.title'    => 'Cómo usar AutoIRS',
+    'help.subtitle' => 'Guía rápida de las principales funciones',
+    'help.c1_title' => 'Gestionar clientes',
+    'help.c1_body'  => 'En el Panel, haz clic en «Nuevo cliente» y rellena el NIF (9 dígitos), el nombre y los contactos. En la lista, usa los iconos para editar, calcular el IRS, ver declaraciones o gestionar el alta de actividad.',
+    'help.c2_title' => 'Calcular el IRS',
+    'help.c2_body'  => 'Abre un cliente y haz clic en el icono de la calculadora. Introduce la renta de categoría A y los gastos (salud, educación, generales, vivienda). El sistema aplica los tramos y las deducciones y muestra el impuesto estimado. Es un cálculo de apoyo — no sustituye la liquidación oficial de la AT.',
+    'help.c3_title' => 'Alta de actividad',
+    'help.c3_body'  => 'En un cliente, abre «Alta de actividad» y crea un proceso (fecha de inicio, CAE, volumen de negocio, IBAN, opción de IVA). Luego genera la guía en PDF, envíala para validación y aprueba o rechaza. El estado se sigue en cada paso.',
+    'help.c4_title' => 'Idioma y cuenta',
+    'help.c4_body'  => 'Cambia el idioma con el selector 🌐 de la barra superior. Para salir, usa «Salir».',
+    'tip.irs'       => 'Introduce la renta bruta de categoría A y los gastos deducibles. El resultado es una estimación de apoyo.',
+    'tip.abertura'  => 'Recoge los datos del cliente para preparar el alta de actividad. Después podrás generar la guía en PDF para presentar en el Portal de Finanzas.',
+
     // Pie de página
     'footer.tagline'    => 'Sistema de gestión de IRS y Alta de Actividad.',
     'footer.disclaimer' => 'Cálculo simplificado de apoyo. No sustituye la liquidación oficial de la AT.',

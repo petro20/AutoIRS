@@ -16,6 +16,8 @@ use App\Core\Csrf;
 
         <p class="text-muted"><?= e(t('common.client')) ?>: <strong><?= e($cliente['nome']) ?></strong> (NIF <?= e($cliente['nif']) ?>)</p>
 
+        <div class="alert alert-info d-flex gap-2"><i class="bi bi-info-circle-fill"></i> <span><?= e(t('tip.irs')) ?></span></div>
+
         <div class="card shadow-sm mb-4">
             <div class="card-body">
                 <form method="post" action="<?= url('irs/calcular/' . $cliente['id']) ?>">

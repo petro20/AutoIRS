@@ -141,6 +141,26 @@ a { text-decoration: none; }
 .dropdown-item:hover, .dropdown-item:focus { background: var(--gold-soft); color: var(--gold-2); }
 .dropdown-item.active { background: rgba(210, 163, 60, .2); color: var(--gold-2); }
 
+/* Acordeão (página de Ajuda) */
+.accordion { --bs-accordion-bg: transparent; }
+.accordion-item {
+    background: linear-gradient(180deg, var(--navy-card), var(--navy-700));
+    border: 1px solid var(--line-2);
+    border-radius: 12px !important;
+    margin-bottom: .6rem;
+    overflow: hidden;
+}
+.accordion-button {
+    background: transparent;
+    color: var(--ivory);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+}
+.accordion-button:not(.collapsed) { background: var(--gold-soft); color: var(--gold-2); box-shadow: none; }
+.accordion-button:focus { box-shadow: 0 0 0 .2rem var(--gold-soft); border-color: var(--gold); }
+.accordion-button::after { filter: invert(75%) sepia(40%) saturate(500%) hue-rotate(5deg); }
+.accordion-body { color: var(--muted); line-height: 1.7; }
+
 /* ---------- Cartões ---------- */
 .card {
     background: linear-gradient(180deg, var(--navy-card), var(--navy-700));

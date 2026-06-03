@@ -138,6 +138,21 @@ return [
     'estado.concluido'         => 'Concluído',
     'estado.rejeitado'         => 'Rejeitado',
 
+    // Ajuda
+    'nav.help'      => 'Ajuda',
+    'help.title'    => 'Como usar o AutoIRS',
+    'help.subtitle' => 'Guia rápido das principais funcionalidades',
+    'help.c1_title' => 'Gerir clientes',
+    'help.c1_body'  => 'No Painel, clique em "Novo cliente" e preencha o NIF (9 dígitos), nome e contactos. Na lista, use os ícones para editar, calcular IRS, ver declarações ou gerir a abertura de atividade.',
+    'help.c2_title' => 'Calcular IRS',
+    'help.c2_body'  => 'Abra um cliente e clique no ícone da calculadora. Indique o rendimento da categoria A e as despesas (saúde, educação, gerais, habitação). O sistema aplica os escalões e as deduções e mostra o imposto estimado. É um cálculo de apoio — não substitui a liquidação oficial da AT.',
+    'help.c3_title' => 'Abertura de atividade',
+    'help.c3_body'  => 'No cliente, abra "Abertura de atividade" e crie um processo (data de início, CAE, volume de negócios, IBAN, opção de IVA). Depois gere o guia em PDF, envie para validação e aprove ou rejeite. O estado é acompanhado em cada etapa.',
+    'help.c4_title' => 'Idioma e conta',
+    'help.c4_body'  => 'Troque o idioma no seletor 🌐 da barra superior. Para terminar a sessão, use "Sair".',
+    'tip.irs'       => 'Preencha o rendimento bruto da categoria A e as despesas dedutíveis. O resultado é uma estimativa de apoio.',
+    'tip.abertura'  => 'Recolha os dados do cliente para preparar o início de atividade. Depois poderá gerar o guia em PDF para entregar no Portal das Finanças.',
+
     // Rodapé
     'footer.tagline'    => 'Sistema de gestão de IRS e Abertura de Atividade.',
     'footer.disclaimer' => 'Cálculo simplificado de apoio. Não substitui a liquidação oficial da AT.',

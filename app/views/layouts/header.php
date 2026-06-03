@@ -42,6 +42,9 @@ use App\Core\I18n;
                     <a class="nav-link" href="<?= url('cliente/create') ?>"><i class="bi bi-person-plus"></i> <?= e(t('nav.new_client')) ?></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="<?= url('help') ?>"><i class="bi bi-question-circle"></i> <?= e(t('nav.help')) ?></a>
+                </li>
+                <li class="nav-item">
                     <span class="nav-link text-white-50"><i class="bi bi-person-circle"></i> <?= e(Auth::nome()) ?></span>
                 </li>
                 <li class="nav-item">

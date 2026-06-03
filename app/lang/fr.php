@@ -138,6 +138,21 @@ return [
     'estado.concluido'         => 'Terminé',
     'estado.rejeitado'         => 'Rejeté',
 
+    // Aide
+    'nav.help'      => 'Aide',
+    'help.title'    => 'Comment utiliser AutoIRS',
+    'help.subtitle' => 'Guide rapide des principales fonctionnalités',
+    'help.c1_title' => 'Gérer les clients',
+    'help.c1_body'  => "Sur le tableau de bord, cliquez sur « Nouveau client » et renseignez le NIF (9 chiffres), le nom et les contacts. Dans la liste, utilisez les icônes pour modifier, calculer l'IRS, voir les déclarations ou gérer l'ouverture d'activité.",
+    'help.c2_title' => "Calculer l'IRS",
+    'help.c2_body'  => "Ouvrez un client et cliquez sur l'icône de la calculatrice. Saisissez le revenu de catégorie A et les dépenses (santé, éducation, générales, logement). Le système applique les tranches et les déductions et affiche l'impôt estimé. C'est un calcul indicatif — il ne remplace pas la liquidation officielle de l'AT.",
+    'help.c3_title' => "Ouverture d'activité",
+    'help.c3_body'  => "Pour un client, ouvrez « Ouverture d'activité » et créez un dossier (date de début, code CAE, chiffre d'affaires, IBAN, option de TVA). Générez ensuite le guide PDF, envoyez pour validation et approuvez ou rejetez. Le statut est suivi à chaque étape.",
+    'help.c4_title' => 'Langue et compte',
+    'help.c4_body'  => 'Changez la langue avec le sélecteur 🌐 dans la barre supérieure. Pour quitter, utilisez « Se déconnecter ».',
+    'tip.irs'       => 'Saisissez le revenu brut de catégorie A et les dépenses déductibles. Le résultat est une estimation indicative.',
+    'tip.abertura'  => "Collectez les données du client pour préparer le début d'activité. Vous pourrez ensuite générer le guide PDF à soumettre sur le Portail des Finances.",
+
     // Pied de page
     'footer.tagline'    => "Système de gestion de l'IRS et d'ouverture d'activité.",
     'footer.disclaimer' => "Calcul simplifié à titre indicatif. Ne remplace pas la liquidation officielle de l'AT.",

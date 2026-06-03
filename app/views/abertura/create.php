@@ -13,6 +13,8 @@ $o = fn(string $k) => e($_SESSION['old'][$k] ?? '');
         <h1 class="h3 mb-4"><i class="bi bi-briefcase"></i> <?= e(t('ab.collect_title')) ?></h1>
         <p class="text-muted"><?= e(t('common.client')) ?>: <strong><?= e($cliente['nome']) ?></strong></p>
 
+        <div class="alert alert-info d-flex gap-2"><i class="bi bi-info-circle-fill"></i> <span><?= e(t('tip.abertura')) ?></span></div>
+
         <div class="card shadow-sm">
             <div class="card-body">
                 <!-- enctype obrigatório para upload de ficheiros -->
