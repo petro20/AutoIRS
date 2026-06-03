@@ -10,6 +10,7 @@ use App\Core\Csrf;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registar — <?= APP_NAME ?></title>
+    <link rel="icon" type="image/png" href="<?= url('assets/img/logo.png') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -23,10 +24,10 @@ use App\Core\Csrf;
         <div class="col-md-5 col-lg-4">
             <div class="auth-card">
                 <div class="card-body p-4 p-lg-5">
-                    <h1 class="brand-title text-center mb-1" style="font-size:2rem">
-                        <i class="bi bi-gem brand-mark"></i> <?= APP_NAME ?>
-                    </h1>
-                    <p class="text-center text-muted mb-4" style="letter-spacing:2px;text-transform:uppercase;font-size:.78rem">Criar Conta de Contabilista</p>
+                    <div class="text-center mb-4">
+                        <img src="<?= url('assets/img/logo.png') ?>" alt="AutoIRS" style="width:200px;max-width:70%;border-radius:16px">
+                        <p class="text-muted mt-2 mb-0" style="letter-spacing:2px;text-transform:uppercase;font-size:.72rem">Criar Conta de Contabilista</p>
+                    </div>
 
                     <?php if (!empty($_SESSION['flash'])): ?>
                         <div class="alert alert-<?= e($_SESSION['flash']['type']) ?>">

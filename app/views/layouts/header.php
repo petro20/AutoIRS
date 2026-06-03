@@ -10,6 +10,7 @@ use App\Core\Auth;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= e($titulo ?? APP_NAME) ?> — <?= APP_NAME ?></title>
+    <link rel="icon" type="image/png" href="<?= url('assets/img/logo.png') ?>">
 
     <!-- Tipografia premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +26,8 @@ use App\Core\Auth;
 
 <nav class="navbar navbar-expand-lg navbar-luxe sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="<?= url('dashboard') ?>">
-            <i class="bi bi-gem"></i> <?= APP_NAME ?>
+        <a class="navbar-brand d-flex align-items-center" href="<?= url('dashboard') ?>">
+            <img src="<?= url('assets/img/logo.png') ?>" alt="AutoIRS" height="46" style="border-radius:8px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
             <span class="navbar-toggler-icon"></span>
