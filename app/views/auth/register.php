@@ -5,22 +5,28 @@ use App\Core\Csrf;
 /** Vista de registo (sem layout principal). */
 ?>
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registar — <?= APP_NAME ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="<?= url('assets/css/style.css') ?>" rel="stylesheet">
 </head>
-<body class="bg-primary bg-gradient">
+<body class="auth-page">
 <div class="container">
     <div class="row justify-content-center align-items-center" style="min-height:100vh">
-        <div class="col-md-5">
-            <div class="card shadow-lg border-0">
-                <div class="card-body p-4">
-                    <h1 class="h3 text-center mb-1"><i class="bi bi-calculator text-primary"></i> <?= APP_NAME ?></h1>
-                    <p class="text-center text-muted mb-4">Criar conta de contabilista</p>
+        <div class="col-md-5 col-lg-4">
+            <div class="auth-card">
+                <div class="card-body p-4 p-lg-5">
+                    <h1 class="brand-title text-center mb-1" style="font-size:2rem">
+                        <i class="bi bi-gem brand-mark"></i> <?= APP_NAME ?>
+                    </h1>
+                    <p class="text-center text-muted mb-4" style="letter-spacing:2px;text-transform:uppercase;font-size:.78rem">Criar Conta de Contabilista</p>
 
                     <?php if (!empty($_SESSION['flash'])): ?>
                         <div class="alert alert-<?= e($_SESSION['flash']['type']) ?>">
@@ -51,7 +57,7 @@ use App\Core\Csrf;
                         <button class="btn btn-primary w-100"><i class="bi bi-person-plus"></i> Criar conta</button>
                     </form>
 
-                    <hr class="my-4">
+                    <hr class="auth-divider my-4">
                     <p class="text-center mb-0">
                         Já tem conta? <a href="<?= url('auth/login') ?>">Entrar</a>
                     </p>

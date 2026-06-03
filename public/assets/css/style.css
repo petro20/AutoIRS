@@ -1,33 +1,284 @@
-/* AutoIRS — estilos personalizados (complementam o Bootstrap 5) */
+/* =====================================================================
+   AutoIRS — Tema Premium "Midnight Luxe"
+   Paleta: Azul-marinho profundo + Dourado + Marfim
+   Tipografia: Playfair Display (títulos) + Inter (texto)
+   Funciona sobre o Bootstrap 5.3 em modo escuro (data-bs-theme="dark").
+   ===================================================================== */
+
+:root {
+    /* Navy */
+    --navy-900: #07111C;
+    --navy-800: #0B1B2B;
+    --navy-700: #0F2438;
+    --navy-600: #13314A;
+    --navy-card: #102337;
+
+    /* Gold */
+    --gold:      #C9A227;
+    --gold-2:    #E5C07B;
+    --gold-soft: rgba(201, 162, 39, .14);
+
+    /* Neutros */
+    --ivory:  #F6F3EC;
+    --muted:  #9DB0C2;
+    --line:   rgba(229, 192, 123, .16);
+    --line-2: rgba(255, 255, 255, .06);
+
+    --shadow:    0 24px 60px -28px rgba(0, 0, 0, .75);
+    --shadow-sm: 0 12px 30px -18px rgba(0, 0, 0, .65);
+
+    /* Overrides do Bootstrap */
+    --bs-body-bg: var(--navy-800);
+    --bs-body-color: var(--ivory);
+    --bs-primary: #C9A227;
+    --bs-primary-rgb: 201, 162, 39;
+    --bs-link-color: #E5C07B;
+    --bs-link-hover-color: #C9A227;
+    --bs-border-color: var(--line-2);
+    --bs-emphasis-color: var(--ivory);
+    --bs-secondary-color: var(--muted);
+    --bs-font-sans-serif: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ---------- Base ---------- */
+* { letter-spacing: .1px; }
 
 body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--bs-font-sans-serif);
+    color: var(--ivory);
+    min-height: 100vh;
+    background:
+        radial-gradient(1100px 560px at 82% -8%, rgba(201, 162, 39, .12), transparent 58%),
+        radial-gradient(820px 460px at -8% 108%, rgba(19, 49, 74, .55), transparent 60%),
+        linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+    background-attachment: fixed;
 }
 
-.navbar-brand {
+/* Anula utilitário claro do Bootstrap no body (tema é escuro) */
+body.bg-light { background-color: transparent !important; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
     letter-spacing: .3px;
+    color: var(--ivory);
 }
 
-/* Cartões com transição suave ao passar o rato */
-.card {
-    transition: box-shadow .15s ease-in-out;
-}
-.card.shadow-sm:hover {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
-}
+a { text-decoration: none; }
 
-/* Tabelas mais compactas e legíveis */
-.table > :not(caption) > * > * {
-    padding: .65rem .75rem;
-}
+::selection { background: var(--gold); color: var(--navy-900); }
 
-/* Destaque do valor final de imposto */
-.display-6 {
-    font-variant-numeric: tabular-nums;
-}
+/* Scrollbar refinada */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--navy-900); }
+::-webkit-scrollbar-thumb { background: #1c3550; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #2a4a6b; }
 
-/* Badges de estado um pouco maiores */
-.badge {
+/* ---------- Navbar ---------- */
+.navbar-luxe {
+    background: rgba(8, 18, 30, .85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 6px 30px -16px rgba(0, 0, 0, .8);
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+}
+.navbar-luxe .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    color: var(--ivory) !important;
+}
+.navbar-luxe .navbar-brand i {
+    background: linear-gradient(135deg, var(--gold-2), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navbar-luxe .nav-link {
+    color: rgba(246, 243, 236, .80) !important;
     font-weight: 500;
-    padding: .4em .65em;
+    font-size: .94rem;
+    margin: 0 .15rem;
+    transition: color .2s ease;
 }
+.navbar-luxe .nav-link:hover { color: var(--gold-2) !important; }
+.navbar-luxe .nav-link i { color: var(--gold); }
+.navbar-toggler { border-color: var(--line); }
+
+/* ---------- Cartões ---------- */
+.card {
+    background: linear-gradient(180deg, var(--navy-card), var(--navy-700));
+    border: 1px solid var(--line-2);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    position: relative;
+}
+.card.shadow-sm, .card.shadow { box-shadow: var(--shadow-sm) !important; }
+/* fio dourado no topo dos cartões */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: .55;
+}
+.card .card-header,
+.card .card-header.bg-white {
+    background: transparent !important;
+    color: var(--ivory) !important;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    padding: 1rem 1.25rem;
+}
+.card-header i { color: var(--gold); }
+.card-body { padding: 1.4rem; }
+
+/* destaque (ex.: imposto final / card border-primary) */
+.card.border-primary {
+    border: 1px solid var(--gold) !important;
+    background: linear-gradient(180deg, rgba(201, 162, 39, .12), var(--navy-700));
+}
+.card.border-primary::before { opacity: 1; height: 3px; }
+
+/* ---------- Botões ---------- */
+.btn { border-radius: 10px; font-weight: 600; padding: .55rem 1.15rem; transition: all .2s ease; }
+.btn-primary {
+    background: linear-gradient(135deg, var(--gold-2), var(--gold));
+    border: none;
+    color: #2C2000;
+    box-shadow: 0 10px 24px -12px rgba(201, 162, 39, .8);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(135deg, #EFD08F, #D4AE2E);
+    color: #2C2000;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px -12px rgba(201, 162, 39, .9);
+}
+.btn-outline-secondary { color: var(--muted); border-color: var(--line-2); }
+.btn-outline-secondary:hover { background: rgba(255, 255, 255, .06); color: var(--ivory); border-color: var(--line); }
+.btn-outline-primary { color: var(--gold-2); border-color: rgba(201, 162, 39, .45); }
+.btn-outline-primary:hover { background: var(--gold); color: var(--navy-900); border-color: var(--gold); }
+.btn-outline-info { color: #8fd3e6; border-color: rgba(143, 211, 230, .4); }
+.btn-outline-info:hover { background: #8fd3e6; color: var(--navy-900); }
+.btn-outline-success { color: #8fd6ac; border-color: rgba(141, 214, 172, .4); }
+.btn-outline-success:hover { background: #8fd6ac; color: var(--navy-900); }
+.btn-outline-danger { color: #e9a1a1; border-color: rgba(233, 161, 161, .4); }
+.btn-outline-danger:hover { background: #d96a6a; color: #fff; border-color: #d96a6a; }
+.btn-outline-warning { color: var(--gold-2); border-color: rgba(229, 192, 123, .45); }
+.btn-outline-warning:hover { background: var(--gold-2); color: var(--navy-900); }
+.btn-success { background: linear-gradient(135deg, #2faa72, #1f8a5a); border: none; }
+.btn-warning { background: linear-gradient(135deg, var(--gold-2), var(--gold)); border: none; color: #2C2000; }
+.btn-sm { padding: .35rem .7rem; }
+
+/* ---------- Formulários ---------- */
+.form-label { color: var(--ivory); font-weight: 500; font-size: .92rem; margin-bottom: .35rem; }
+.form-control, .form-select {
+    background-color: rgba(7, 17, 28, .6);
+    border: 1px solid var(--line-2);
+    color: var(--ivory);
+    border-radius: 10px;
+    padding: .6rem .85rem;
+}
+.form-control::placeholder { color: rgba(157, 176, 194, .6); }
+.form-control:focus, .form-select:focus {
+    background-color: rgba(7, 17, 28, .8);
+    border-color: var(--gold);
+    color: var(--ivory);
+    box-shadow: 0 0 0 .2rem var(--gold-soft);
+}
+.form-select { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23C9A227' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); }
+.form-text { color: var(--muted); }
+
+/* ---------- Tabelas ---------- */
+.table { --bs-table-bg: transparent; color: var(--ivory); border-color: var(--line-2); }
+.table > thead th {
+    background: rgba(201, 162, 39, .08) !important;
+    color: var(--gold-2) !important;
+    border-bottom: 1px solid var(--line) !important;
+    text-transform: uppercase;
+    font-size: .78rem;
+    letter-spacing: .8px;
+    font-weight: 600;
+}
+.table > tbody > tr { border-color: var(--line-2); }
+.table-hover > tbody > tr:hover > * {
+    background: rgba(201, 162, 39, .07);
+    color: var(--ivory);
+}
+.table td, .table th { border-color: var(--line-2); }
+
+/* ---------- Listas (list-group) ---------- */
+.list-group { --bs-list-group-bg: transparent; }
+.list-group-item {
+    background: transparent;
+    color: var(--ivory);
+    border-color: var(--line-2);
+    padding: .8rem 1.25rem;
+}
+.list-group-item.bg-light { background: rgba(201, 162, 39, .07) !important; }
+.list-group-item strong { color: var(--gold-2); }
+
+/* ---------- Badges ---------- */
+.badge { font-weight: 600; padding: .45em .7em; border-radius: 6px; letter-spacing: .4px; }
+.badge.bg-secondary { background: #2a3b4d !important; color: var(--ivory); }
+.badge.bg-info { background: rgba(143, 211, 230, .18) !important; color: #aee3f1; }
+.badge.bg-primary { background: var(--gold-soft) !important; color: var(--gold-2); }
+.badge.bg-warning { background: rgba(229, 192, 123, .2) !important; color: var(--gold-2); }
+.badge.bg-success { background: rgba(141, 214, 172, .18) !important; color: #a9e6c6; }
+.badge.bg-danger { background: rgba(233, 161, 161, .18) !important; color: #f0b6b6; }
+
+/* ---------- Alertas ---------- */
+.alert { border-radius: 12px; border: 1px solid var(--line-2); }
+.alert-success { background: rgba(47, 170, 114, .14); color: #b6ecce; border-color: rgba(47, 170, 114, .3); }
+.alert-danger  { background: rgba(217, 106, 106, .14); color: #f1c0c0; border-color: rgba(217, 106, 106, .3); }
+.alert-warning { background: rgba(201, 162, 39, .14); color: var(--gold-2); border-color: rgba(201, 162, 39, .35); }
+.alert-info    { background: rgba(143, 211, 230, .12); color: #b9e6f1; border-color: rgba(143, 211, 230, .3); }
+
+/* ---------- Utilitários sobrepostos ---------- */
+.bg-white { background: linear-gradient(180deg, var(--navy-card), var(--navy-700)) !important; color: var(--ivory); }
+.bg-warning-subtle { background: rgba(201, 162, 39, .12) !important; color: var(--gold-2) !important; }
+.text-muted { color: var(--muted) !important; }
+.text-primary { color: var(--gold-2) !important; }
+.text-danger { color: #e9a1a1 !important; }
+.text-white-50 { color: rgba(246, 243, 236, .55) !important; }
+.border-top { border-color: var(--line-2) !important; }
+hr { border-color: var(--line); opacity: 1; }
+
+/* valor monetário em destaque */
+.display-6 { font-family: 'Playfair Display', serif; font-variant-numeric: tabular-nums; color: var(--gold-2) !important; }
+
+/* círculos do fluxo de estados (abertura) */
+.rounded-circle.bg-primary { background: linear-gradient(135deg, var(--gold-2), var(--gold)) !important; color: var(--navy-900) !important; }
+.rounded-circle.bg-light { background: rgba(255, 255, 255, .06) !important; color: var(--muted) !important; }
+
+/* ---------- Tela de autenticação (login/registo) ---------- */
+.auth-page { display: flex; align-items: center; min-height: 100vh; }
+.auth-card {
+    background: linear-gradient(180deg, rgba(16, 35, 55, .92), rgba(11, 27, 43, .96));
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+}
+.auth-card .brand-title { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--ivory); }
+.auth-card .brand-mark {
+    background: linear-gradient(135deg, var(--gold-2), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.auth-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--line), transparent); border: 0; }
+
+/* ---------- Rodapé ---------- */
+footer.bg-white, footer { background: transparent !important; border-top: 1px solid var(--line) !important; }
+footer .text-muted { color: var(--muted) !important; }
+footer .text-danger { color: rgba(233, 161, 161, .85) !important; }
+
+/* brilho sutil nos ícones de ação */
+.btn-group .btn i { transition: transform .15s ease; }
+.btn-group .btn:hover i { transform: scale(1.12); }

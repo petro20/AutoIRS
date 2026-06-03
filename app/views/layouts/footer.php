@@ -1,8 +1,10 @@
     </main>
 
-<footer class="border-top py-4 mt-5 bg-white">
+<footer class="py-4 mt-5">
     <div class="container text-center text-muted small">
-        &copy; <?= date('Y') ?> <?= APP_NAME ?> — Sistema de gestão de IRS e Abertura de Atividade.
+        <i class="bi bi-gem" style="color:var(--gold)"></i>
+        &copy; <?= date('Y') ?> <strong style="color:var(--gold-2);font-family:'Playfair Display',serif"><?= APP_NAME ?></strong>
+        — Sistema de gestão de IRS e Abertura de Atividade.
         <br>
         <span class="text-danger">Cálculo simplificado de apoio. Não substitui a liquidação oficial da AT.</span>
     </div>
