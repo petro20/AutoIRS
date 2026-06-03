@@ -6,23 +6,27 @@
    ===================================================================== */
 
 :root {
-    /* Navy */
-    --navy-900: #07111C;
-    --navy-800: #0B1B2B;
-    --navy-700: #0F2438;
-    --navy-600: #13314A;
-    --navy-card: #102337;
+    /* Navy — extraído do fundo da logo (charcoal-navy profundo) */
+    --navy-900: #070A11;
+    --navy-800: #0A0E18;   /* fundo base = igual ao fundo da logo */
+    --navy-700: #0E141F;
+    --navy-600: #18212F;
+    --navy-card: #111A28;
 
-    /* Gold */
-    --gold:      #C9A227;
-    --gold-2:    #E5C07B;
-    --gold-soft: rgba(201, 162, 39, .14);
+    /* Dourado — do "A / AUTO" da logo */
+    --gold:      #D2A33C;
+    --gold-2:    #ECCB72;
+    --gold-soft: rgba(210, 163, 60, .14);
+
+    /* Prata/Platina — do "IRS" da logo (acento secundário) */
+    --silver:    #C7CDD6;
+    --silver-2:  #8F98A4;
 
     /* Neutros */
-    --ivory:  #F6F3EC;
-    --muted:  #9DB0C2;
-    --line:   rgba(229, 192, 123, .16);
-    --line-2: rgba(255, 255, 255, .06);
+    --ivory:  #ECEFF3;
+    --muted:  #8A95A3;
+    --line:   rgba(236, 203, 114, .16);
+    --line-2: rgba(255, 255, 255, .055);
 
     --shadow:    0 24px 60px -28px rgba(0, 0, 0, .75);
     --shadow-sm: 0 12px 30px -18px rgba(0, 0, 0, .65);
@@ -30,10 +34,10 @@
     /* Overrides do Bootstrap */
     --bs-body-bg: var(--navy-800);
     --bs-body-color: var(--ivory);
-    --bs-primary: #C9A227;
-    --bs-primary-rgb: 201, 162, 39;
-    --bs-link-color: #E5C07B;
-    --bs-link-hover-color: #C9A227;
+    --bs-primary: #D2A33C;
+    --bs-primary-rgb: 210, 163, 60;
+    --bs-link-color: #ECCB72;
+    --bs-link-hover-color: #D2A33C;
     --bs-border-color: var(--line-2);
     --bs-emphasis-color: var(--ivory);
     --bs-secondary-color: var(--muted);
@@ -48,9 +52,9 @@ body {
     color: var(--ivory);
     min-height: 100vh;
     background:
-        radial-gradient(1100px 560px at 82% -8%, rgba(201, 162, 39, .12), transparent 58%),
-        radial-gradient(820px 460px at -8% 108%, rgba(19, 49, 74, .55), transparent 60%),
-        linear-gradient(180deg, var(--navy-800) 0%, var(--navy-900) 100%);
+        radial-gradient(1100px 600px at 78% -12%, rgba(210, 163, 60, .09), transparent 55%),
+        radial-gradient(820px 480px at 50% -5%, rgba(28, 38, 56, .45), transparent 60%),
+        linear-gradient(180deg, #0A0E18 0%, #070A11 100%);
     background-attachment: fixed;
 }
 
@@ -76,7 +80,7 @@ a { text-decoration: none; }
 
 /* ---------- Navbar ---------- */
 .navbar-luxe {
-    background: rgba(8, 18, 30, .85);
+    background: rgba(8, 11, 18, .82);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
@@ -159,8 +163,9 @@ a { text-decoration: none; }
     transform: translateY(-1px);
     box-shadow: 0 14px 30px -12px rgba(201, 162, 39, .9);
 }
-.btn-outline-secondary { color: var(--muted); border-color: var(--line-2); }
-.btn-outline-secondary:hover { background: rgba(255, 255, 255, .06); color: var(--ivory); border-color: var(--line); }
+/* botão secundário em tom prata (do "IRS" da logo) */
+.btn-outline-secondary { color: var(--silver); border-color: rgba(199, 205, 214, .25); }
+.btn-outline-secondary:hover { background: rgba(199, 205, 214, .1); color: #fff; border-color: var(--silver-2); }
 .btn-outline-primary { color: var(--gold-2); border-color: rgba(201, 162, 39, .45); }
 .btn-outline-primary:hover { background: var(--gold); color: var(--navy-900); border-color: var(--gold); }
 .btn-outline-info { color: #8fd3e6; border-color: rgba(143, 211, 230, .4); }
@@ -259,7 +264,7 @@ hr { border-color: var(--line); opacity: 1; }
 /* ---------- Tela de autenticação (login/registo) ---------- */
 .auth-page { display: flex; align-items: center; min-height: 100vh; }
 .auth-card {
-    background: linear-gradient(180deg, rgba(16, 35, 55, .92), rgba(11, 27, 43, .96));
+    background: linear-gradient(180deg, rgba(20, 28, 42, .94), rgba(8, 11, 18, .97));
     border: 1px solid var(--line);
     border-radius: 22px;
     box-shadow: var(--shadow);
