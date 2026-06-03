@@ -65,11 +65,11 @@ body:not(.auth-page)::before {
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    background: url("../img/logo.png") no-repeat center 42%;
-    background-size: min(640px, 78vw);
-    opacity: .07;
-    -webkit-mask-image: radial-gradient(ellipse 62% 58% at center 42%, #000 28%, transparent 72%);
-    mask-image: radial-gradient(ellipse 62% 58% at center 42%, #000 28%, transparent 72%);
+    background: url("../img/logo.png") no-repeat center 44%;
+    background-size: min(720px, 84vw);
+    opacity: .14;
+    -webkit-mask-image: radial-gradient(ellipse 64% 60% at center 44%, #000 38%, transparent 76%);
+    mask-image: radial-gradient(ellipse 64% 60% at center 44%, #000 38%, transparent 76%);
 }
 /* Conteúdo acima da marca d'água */
 .navbar, main, footer { position: relative; z-index: 1; }
