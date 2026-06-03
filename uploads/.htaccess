@@ -1,0 +1,25 @@
+# Proteção da pasta de uploads.
+#
+# Impede a execução de qualquer script (PHP, etc.) carregado por engano e
+# bloqueia o acesso direto via web. Os ficheiros são servidos apenas através
+# dos controladores autenticados (abertura/comprovativo, abertura/download).
+
+# Apache 2.4+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+# Apache 2.2
+<IfModule !mod_authz_core.c>
+    Order Allow,Deny
+    Deny from all
+</IfModule>
+
+# Desativar execução de PHP por precaução adicional.
+<FilesMatch "\.(php|phtml|php3|php4|php5|phps|cgi|pl|py)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+php_flag engine off

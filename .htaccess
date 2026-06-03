@@ -1,0 +1,17 @@
+# Proteção da raiz do projeto.
+#
+# Idealmente o document root deve apontar para /public. Quando isso não é
+# possível e o domínio aponta para a raiz do projeto, este ficheiro
+# redireciona todo o tráfego para a pasta /public e bloqueia o acesso
+# direto às pastas sensíveis (config, app, sql, uploads).
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Bloquear acesso direto a pastas sensíveis.
+    RewriteRule ^(config|app|sql|vendor)/ - [F,L]
+
+    # Encaminhar tudo para a pasta public.
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

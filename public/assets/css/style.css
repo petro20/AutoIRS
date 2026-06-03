@@ -1,0 +1,33 @@
+/* AutoIRS — estilos personalizados (complementam o Bootstrap 5) */
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.navbar-brand {
+    letter-spacing: .3px;
+}
+
+/* Cartões com transição suave ao passar o rato */
+.card {
+    transition: box-shadow .15s ease-in-out;
+}
+.card.shadow-sm:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
+}
+
+/* Tabelas mais compactas e legíveis */
+.table > :not(caption) > * > * {
+    padding: .65rem .75rem;
+}
+
+/* Destaque do valor final de imposto */
+.display-6 {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Badges de estado um pouco maiores */
+.badge {
+    font-weight: 500;
+    padding: .4em .65em;
+}

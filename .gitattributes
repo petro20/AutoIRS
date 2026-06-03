@@ -1,2 +1,9 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Normalizar quebras de linha: o repositório usa LF (Linux/Hostinger).
+# Evita problemas de CRLF ao fazer deploy a partir do Windows.
+* text=auto eol=lf
+
+# Ficheiros binários (não normalizar).
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary

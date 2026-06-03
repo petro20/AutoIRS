@@ -1,0 +1,24 @@
+# --- Credenciais (NUNCA versionar) -----------------------------------
+/config/database.php
+
+# --- Uploads de utilizadores (comprovativos e PDFs gerados) ----------
+/uploads/*
+!/uploads/.htaccess
+!/uploads/.gitkeep
+!/uploads/comprovativos/
+/uploads/comprovativos/*
+!/uploads/comprovativos/.gitkeep
+!/uploads/pdfs/
+/uploads/pdfs/*
+!/uploads/pdfs/.gitkeep
+
+# --- Dependências Composer -------------------------------------------
+/vendor/
+
+# --- Sistema / editores ----------------------------------------------
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp

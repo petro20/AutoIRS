@@ -1,0 +1,27 @@
+# AutoIRS - reescrita de URLs para o front controller
+# Todos os pedidos a ficheiros/pastas inexistentes são encaminhados para index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Base: a pasta public é o document root.
+    RewriteBase /
+
+    # Não reescrever se o ficheiro ou diretório existir realmente
+    # (assets estáticos: CSS, JS, imagens).
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Passa o caminho pedido na query string ?url=...
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# --- Cabeçalhos de segurança --------------------------------------------
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Impede listagem de diretórios
+Options -Indexes
